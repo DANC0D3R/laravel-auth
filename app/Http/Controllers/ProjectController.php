@@ -57,12 +57,13 @@ class ProjectController extends Controller
      */
     public function update(Request $request, Project $project)
     {
+        $old_p_name = $project->name;
         $data = $request->all();
 
         $project->fill($data);
         $project->save();
 
-        return to_route('dashboard');
+        return to_route('dashboard')->with('updated-allert', "Il progetto $old_p_name è stato modificato");
     }
 
     /**
