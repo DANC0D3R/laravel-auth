@@ -2,11 +2,8 @@
 
 @section('content')
 <div class="container">
-    <h2 class="fs-4 text-secondary my-4">
-        {{ __('Dashboard') }}
-    </h2>
     <div class="row justify-content-center">
-        <div class="col">
+        <div class="col p-5">
             <table class="table">
                 <thead>
                 <tr>
@@ -16,19 +13,22 @@
                 </tr>
                 </thead>
                 <tbody>
-                    {{-- @foreach ($projects as $project)
-                    @endforeach --}}
+                    @foreach ($projects as $project)
                     <tr>
-                    <td>Project name</td>
-                    <td>Project date</td>
+                    <td>{{ $project->name }}</td>
+                    <td>{{ $project->completion_date }}</td>
                     <td class="text-end">
-                        <a href="#" class="btn btn-primary"><i class="fa-solid fa-eye"></i></a>
-                        <a href="#" class="btn btn-secondary"><i class="fa-solid fa-pen-to-square"></i></a>
-                        <a href="#" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></a>
+                        <a href="{{ route('admin.projects.show', $project->id) }}" class="btn btn-primary"><i class="fa-solid fa-eye"></i></a>
+                        <a href="{{ route('admin.projects.show', $project->id) }}" class="btn btn-secondary"><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href="{{ route('admin.projects.destroy', $project->id) }}" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></a>
                     </td>
                     </tr>
+                    @endforeach
                 </tbody>
             </table>
+            <div class="text-end">
+                <a href="#" class="btn btn-success"><i class="fa-solid fa-plus"></i></a>
+            </div>
         </div>
     </div>
 </div>
