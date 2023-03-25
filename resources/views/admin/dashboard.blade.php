@@ -3,7 +3,12 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col p-5">
+        <div class="col">
+            @if (session('created-allert'))
+                <div class="alert alert-success" role="alert">
+                    {{ session('created-allert') }}
+                </div>
+            @endif
             <table class="table">
                 <thead>
                 <tr>

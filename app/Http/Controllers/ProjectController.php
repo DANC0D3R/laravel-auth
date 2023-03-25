@@ -33,7 +33,7 @@ class ProjectController extends Controller
         $project->fill($data);
         $project->save();
 
-        return to_route('dashboard');
+        return to_route('dashboard')->with('created-allert', "Il progetto $project->name è stato aggiunto");
     }
 
     /**
