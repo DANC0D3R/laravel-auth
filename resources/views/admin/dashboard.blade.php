@@ -19,7 +19,7 @@
                     <td>{{ $project->completion_date }}</td>
                     <td class="text-end">
                         <a href="{{ route('admin.projects.show', $project->id) }}" class="btn btn-primary"><i class="fa-solid fa-eye"></i></a>
-                        <a href="{{ route('admin.projects.show', $project->id) }}" class="btn btn-secondary"><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href="{{ route('admin.projects.edit', $project->id) }}" class="btn btn-secondary"><i class="fa-solid fa-pen-to-square"></i></a>
                         <a href="{{ route('admin.projects.destroy', $project->id) }}" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></a>
                     </td>
                     </tr>
@@ -27,7 +27,7 @@
                 </tbody>
             </table>
             <div class="text-end">
-                <a href="#" class="btn btn-success"><i class="fa-solid fa-plus"></i></a>
+                <a href="{{ route('admin.projects.create') }}" class="btn btn-success"><i class="fa-solid fa-plus"></i></a>
             </div>
         </div>
     </div>
