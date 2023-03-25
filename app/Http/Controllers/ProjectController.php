@@ -57,7 +57,12 @@ class ProjectController extends Controller
      */
     public function update(Request $request, Project $project)
     {
-        //
+        $data = $request->all();
+
+        $project->fill($data);
+        $project->save();
+
+        return to_route('dashboard');
     }
 
     /**
