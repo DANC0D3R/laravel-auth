@@ -25,12 +25,12 @@
                 <input type="file" class="form-control" name="image" id="image">
             </div>
             <div class="w-25 px-5">
-                <img src="{{ asset('storage/' . $project->image) }}" class="img-fluid" alt="{{ $project->name }}" id="preview">                
+                <img src="{{ asset('storage/' . $project->image) }}" class="img-fluid rounded" alt="{{ $project->name }}" id="preview">                
             </div>
         </div>
         <div class="text-center">
             <a href="{{ route('dashboard') }}" class="btn btn-secondary me-2">Torna indietro</a>
-            <button class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i> Modifica</button>
+            <button class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i> Conferma modifiche</button>
         </div>
     </form>
 </div>

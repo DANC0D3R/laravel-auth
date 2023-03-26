@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Project;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProjectController extends Controller
 {
@@ -30,7 +31,17 @@ class ProjectController extends Controller
     {
         $data = $request->all();
         $project = new Project();
-        $project->fill($data);
+        
+        if (array_key_exists('image', $data)){
+            $img_url = Storage::put('projects', $data['image']);
+            $data['image'] = $img_url;
+        };
+
+        $project->name = $data['name'];
+        $project->completion_date = $data['completion_date'];
+        $project->image = $data['image'];
+        $project->author = $data['author'];
+
         $project->save();
 
         return to_route('dashboard')->with('created-allert', "Il progetto $project->name è stato aggiunto");
@@ -60,7 +71,18 @@ class ProjectController extends Controller
         $old_p_name = $project->name;
         $data = $request->all();
 
-        $project->fill($data);
+        if (array_key_exists('image', $data)){
+            if ($project->image) Storage::delete($project->image);
+            $img_url = Storage::put('projects', $data['image']);
+            $data['image'] = $img_url;
+
+            $project->image = $data['image'];
+        };
+
+        $project->name = $data['name'];
+        $project->completion_date = $data['completion_date'];
+        $project->author = $data['author'];
+
         $project->save();
 
         return to_route('dashboard')->with('updated-allert', "Il progetto $old_p_name è stato modificato");

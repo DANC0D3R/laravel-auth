@@ -24,7 +24,7 @@
                 <input type="file" class="form-control" name="image" id="image">
             </div>
             <div class="w-25 px-5">
-                <img src="https://t3.ftcdn.net/jpg/02/48/42/64/360_F_248426448_NVKLywWqArG2ADUxDq6QprtIzsF82dMF.jpg" class="img-fluid" alt="placeholder" id="preview">                
+                <img src="https://t3.ftcdn.net/jpg/02/48/42/64/360_F_248426448_NVKLywWqArG2ADUxDq6QprtIzsF82dMF.jpg" class="img-fluid rounded" alt="placeholder" id="preview">                
             </div>
         </div>
         <div class="text-center">

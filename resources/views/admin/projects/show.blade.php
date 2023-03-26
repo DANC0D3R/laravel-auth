@@ -4,9 +4,9 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-auto p-5">
-            <div class="card overflow-hidden" style="width: @if($project->image) 32rem; @else 20rem; @endif ">
+            <div class="card overflow-hidden" style="min-width:20rem; max-height:32rem; max-width: @if($project->image) 45rem; @else 20rem; @endif ">
                 <div class=" d-flex">
-                    <div class="@if($project->image) w-50 @else w-100 @endif">
+                    <div class="@if($project->image) w-25 @else w-100 @endif">
                         <div class="card-header">
                             <b>Nome progetto:</b><br>{{ $project->name }}
                         </div>
@@ -16,9 +16,9 @@
                         </ul>
                     </div>
                     @if ($project->image)
-                    <div class="w-50">
+                    <div class="w-75">
                         <figure class="m-0 p-0 w-100 h-100">
-                            <img src="..." class="object-fit-cover object-position-center rounded-end" alt="...">
+                            <img src="{{ asset('storage/' . $project->image) }}" class="w-100 rounded-end" alt="...">
                         </figure>
                     </div>
                     @endif

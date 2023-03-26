@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->date('completion_date')->nullable();
+            $table->string('image')->nullable();
             $table->string('author')->default('Daniele Minieri');
             $table->timestamps();
         });
