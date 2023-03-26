@@ -19,6 +19,7 @@
             </div>
         </div>
         <div class="text-center">
+            <a href="{{ route('dashboard') }}" class="btn btn-secondary me-2">Torna indietro</a>
             <button class="btn btn-primary"><i class="fa-solid fa-share-from-square"></i> Aggiungi</button>
         </div>
     </form>

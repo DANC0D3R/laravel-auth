@@ -47,7 +47,7 @@
                 </tbody>
             </table>
             <div class="text-end">
-                <a href="{{ route('admin.projects.create') }}" class="btn btn-success"><i class="fa-solid fa-plus"></i></a>
+                <a href="{{ route('admin.projects.create') }}" class="btn btn-success me-2"><i class="fa-solid fa-plus"></i></a>
             </div>
         </div>
     </div>
