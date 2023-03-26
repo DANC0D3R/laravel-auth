@@ -72,6 +72,6 @@ class ProjectController extends Controller
     public function destroy(Project $project)
     {
         $project->delete();
-        return to_route('dashboard');
+        return to_route('dashboard')->with('deleted-allert', "Il progetto $project->name è stato eliminato");
     }
 }

@@ -4,6 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col">
+            {{-- Alerts --}}
             @if (session('created-allert'))
                 <div class="alert alert-success" role="alert">
                     {{ session('created-allert') }}
@@ -12,6 +13,11 @@
             @if (session('updated-allert'))
                 <div class="alert alert-success" role="alert">
                     {{ session('updated-allert') }}
+                </div>
+            @endif
+            @if (session('deleted-allert'))
+                <div class="alert alert-danger" role="alert">
+                    {{ session('deleted-allert') }}
                 </div>
             @endif
             <table class="table">
